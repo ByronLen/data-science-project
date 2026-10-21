@@ -31,7 +31,7 @@ A simple scaled logistic classifier makes a transparent teaching example with re
 
 The script validates the exact eight-column schema, converts the four measurements to numeric, and removes rows missing species or any measurement. Two rows are removed, leaving 342 observations (Adelie 151, Chinstrap 68, Gentoo 123); no mean imputation is used. Raw missing counts are reported before conversion.
 
-Exploratory analysis uses complete morphology records for species counts, means, medians, and sample standard deviations. Pairwise-complete Pearson correlations and sample sizes are computed overall and within each species for bill length versus flipper length, and flipper length versus body mass. CSV statistics are rounded to three decimals. Descriptive eta-squared is between-species sum of squares divided by total sum of squares; it ranks observed separation without measuring predictive feature importance or statistical significance.
+Exploratory analysis uses complete morphology records for species counts, means, medians, and sample standard deviations. Pairwise-complete Pearson correlations and sample sizes are computed overall and within each species for bill length versus flipper length, and flipper length versus body mass. CSV statistics are rounded to three decimals. Descriptive eta-squared is calculated on 342 complete-case observations as between-species sum of squares divided by total sum of squares; it ranks observed separation without measuring predictive feature importance or statistical significance.
 
 The four measurement features feed a StandardScaler + LogisticRegression(max_iter=2000) pipeline. A stratified 75/25 split with random_state=42 produces 256 training and 86 test observations. Five-fold StratifiedKFold cross-validation (shuffle=True, random_state=42) uses training data only; reported SD uses ddof=0. Each fold fits its own scaler through the pipeline. Accuracy, macro F1, per-class precision/recall/F1, and a confusion matrix evaluate the held-out predictions.
 
@@ -44,7 +44,7 @@ Validated software: Python 3.12.0; pandas 2.3.3; NumPy 2.5.4; Matplotlib 3.11.2;
 1. **Descriptive separation:** Gentoo mean body mass is 5076.016 g, versus 3700.662 g for Adelie and 3733.088 g for Chinstrap; mean bill depth is 14.982 mm versus 18.346 and 18.421 mm. Flipper length has the highest descriptive eta-squared (0.778), followed by bill length (0.708), bill depth (0.680), and body mass (0.670). [Figure 1](figures/01_measurements_by_species.png).
 2. **Overlap remains:** Adelie and Chinstrap mean bill lengths are 38.791 and 48.834 mm, but their median masses are both 3700.000 g and their bill-depth medians are 18.400 and 18.450 mm; individual distributions overlap. Gentoo mean flipper length is 217.187 mm versus 189.954 and 195.824 mm, with some boundary overlap. [Figure 1](figures/01_measurements_by_species.png), [Figure 2](figures/02_bill_vs_flipper.png).
 3. **Predictive performance:** Test accuracy and macro F1 are both 1.000 across 86 observations; the diagonal counts are 38 Adelie, 17 Chinstrap, and 31 Gentoo, with zero errors, so this split has no dominant confusion pair. Training-only CV accuracy is 0.980 ± 0.012, showing that perfect test performance is not guaranteed across splits. [Figure 3](figures/03_confusion_matrix.png).
-4. **Pooled associations need context:** Flipper length versus mass has overall r=0.871, exceeding within-species r=0.468, 0.642, and 0.703; bill versus flipper length has overall r=0.656 versus 0.326, 0.472, and 0.661, so Gentoo is an exception to a universal pooled-greater-than-within claim. The pattern is consistent with species differences contributing to pooled association, without establishing causation. [Figure 2](figures/02_bill_vs_flipper.png), [correlation results](results/correlations.csv).
+4. **Pooled associations need context:** Flipper length versus mass has overall r=0.871, exceeding within-species r=0.468 (Adelie), 0.642 (Chinstrap), and 0.703 (Gentoo); bill versus flipper length has overall r=0.656 versus within-species r=0.326 (Adelie), 0.472 (Chinstrap), and 0.661 (Gentoo), so Gentoo is an exception to a universal pooled-greater-than-within claim. The pattern is consistent with species differences contributing to pooled association, without establishing causation. [Figure 2](figures/02_bill_vs_flipper.png), [correlation results](results/correlations.csv).
 
 ![Figure 1: Measurements by species](figures/01_measurements_by_species.png)
 
@@ -62,7 +62,7 @@ Validated software: Python 3.12.0; pandas 2.3.3; NumPy 2.5.4; Matplotlib 3.11.2;
 - A single holdout split varies with sampling. Training-only five-fold CV partially addresses variability, but there is no external validation set or grouping by sampling site/year.
 - High accuracy does not imply biological importance. Classification demonstrates distinguishability, not why species differ.
 - Figures are descriptive and cannot support conservation or policy recommendations.
-- The eta-squared ranking uses the observed full dataset and correlated measurements; it is not a ranking of independent model contributions.
+- The eta-squared ranking uses 342 complete-case observations and correlated measurements; it is not a ranking of independent model contributions.
 
 ## How to run
 
@@ -128,7 +128,7 @@ data-science-project/
 
 ## AI assistance
 
-An external AI assistant (<MODEL NAME>; replace before publication) generated the initial code and documentation and executed the reported validation in the project workspace. The human author selected the topic and retains responsibility for review, revision, independent execution, verification, publication, and final decisions. Human review and independent rerunning remain pending at the time of this draft; do not claim they have occurred until completed.
+An external AI assistant (<MODEL NAME>; replace before publication) generated the initial code and documentation and executed the reported validation in the project workspace. The human author selected the topic, reviewed the code and README, independently reran the analysis on 2026-10-21, and confirmed that the reported outputs reproduced exactly. The human author retains responsibility for publication and final decisions.
 
 ## License and citation
 
