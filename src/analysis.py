@@ -67,7 +67,9 @@ def main():
     fig, axes = plt.subplots(2, 2, figsize=(11, 9))
     for ax, feature, label in zip(axes.flat, FEATURES, LABELS):
         sns.boxplot(data=clean, x="species", y=feature, order=SPECIES, hue="species",
-                    palette=palette, legend=False, ax=ax, showfliers=False)
+                    palette=palette, ax=ax, showfliers=False)
+        if ax.get_legend() is not None:
+            ax.get_legend().remove()
         sns.stripplot(data=clean, x="species", y=feature, order=SPECIES,
                       color="black", alpha=.35, size=2.5, jitter=.18, ax=ax)
         ax.set(title=label.split(" (")[0], xlabel="Species", ylabel=label)

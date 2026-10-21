@@ -1,0 +1,16 @@
+Dataset: Palmer Penguins (simplified penguins.csv)
+CSV URL: https://raw.githubusercontent.com/allisonhorst/palmerpenguins/main/inst/extdata/penguins.csv
+Documentation: https://allisonhorst.github.io/palmerpenguins/
+Downloaded: 2026-10-21 (Asia/Shanghai)
+Rows: 344
+Columns: 8
+Collectors: Kristen Gorman and Palmer Station LTER
+Collection: 2007-2009, Palmer Archipelago, Antarctica
+License: CC0 1.0 (public domain dedication); redistribution permitted.
+License URL: https://creativecommons.org/publicdomain/zero/1.0/
+Citation: Horst AM, Hill AP, Gorman KB (2020). palmerpenguins: Palmer Archipelago (Antarctica) penguin data. R package version 0.1.0.
+DOI: https://doi.org/10.5281/zenodo.3960218
+The official page includes LTER use guidance and a request to contact the
+collector about collaboration for publication. Retain attribution.
+Downloaded bytes are preserved without data edits.
+SHA256: f204db2c753b0937caac3cb35258562c14f073e4bbc76be24b4c51ce22767a93
