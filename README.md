@@ -132,8 +132,8 @@ An external AI assistant (OpenAI Codex) generated the initial code and documenta
 
 ## License and citation
 
-Code: MIT, copyright 2026 Liu Zhuoerfan. Data: CC0 1.0. Figures were generated from the CC0 data by the included analysis.
+Code: MIT, copyright 2026 Byron. Data: CC0 1.0. Figures were generated from the CC0 data by the included analysis.
 
 Data citation: Horst AM, Hill AP, Gorman KB (2020). *palmerpenguins: Palmer Archipelago (Antarctica) penguin data*. R package version 0.1.0. [https://doi.org/10.5281/zenodo.3960218](https://doi.org/10.5281/zenodo.3960218).
 
-To cite this project, use: Liu Zhuoerfan (2026). *Penguin Morphometrics: Can Four Measurements Identify a Species?* GitHub repository, data-science-project, https://github.com/ByronLen/data-science-project, accessed 2026-10-21; include the commit SHA used.
+To cite this project, use: Byron (2026). *Penguin Morphometrics: Can Four Measurements Identify a Species?* GitHub repository, data-science-project, https://github.com/ByronLen/data-science-project, accessed 2026-10-21; include the commit SHA used.
