@@ -66,12 +66,12 @@ Validated software: Python 3.12.0; pandas 2.3.3; NumPy 2.5.4; Matplotlib 3.11.2;
 
 ## How to run
 
-Requires Python 3.10+ and Git. Replace YOUR-USERNAME with the human owner's GitHub username after publication; the repository has not yet been published. Installation needs internet, but subsequent analysis reads only the committed CSV.
+Requires Python 3.10+ and Git. Installation needs internet, but subsequent analysis reads only the committed CSV.
 
 Windows PowerShell:
 
 ~~~powershell
-git clone https://github.com/YOUR-USERNAME/data-science-project.git
+git clone https://github.com/ByronLen/data-science-project.git
 cd data-science-project
 python -m venv .venv
 .\.venv\Scripts\Activate.ps1
@@ -90,7 +90,7 @@ If execution policy blocks activation, use the environment directly:
 macOS/Linux:
 
 ~~~bash
-git clone https://github.com/YOUR-USERNAME/data-science-project.git
+git clone https://github.com/ByronLen/data-science-project.git
 cd data-science-project
 python3 -m venv .venv
 source .venv/bin/activate
@@ -128,12 +128,12 @@ data-science-project/
 
 ## AI assistance
 
-An external AI assistant (<MODEL NAME>; replace before publication) generated the initial code and documentation and executed the reported validation in the project workspace. The human author selected the topic, reviewed the code and README, independently reran the analysis on 2026-10-21, and confirmed that the reported outputs reproduced exactly. The human author retains responsibility for publication and final decisions.
+An external AI assistant (OpenAI Codex) generated the initial code and documentation and executed the reported validation in the project workspace. The human author selected the topic, reviewed the code and README, independently reran the analysis on 2026-10-21, and confirmed that the reported outputs reproduced exactly. The human author retains responsibility for publication and final decisions.
 
 ## License and citation
 
-Code: MIT, copyright 2026 <YOUR NAME> (replace before publication). Data: CC0 1.0. Figures were generated from the CC0 data by the included analysis.
+Code: MIT, copyright 2026 ByronLen. Data: CC0 1.0. Figures were generated from the CC0 data by the included analysis.
 
 Data citation: Horst AM, Hill AP, Gorman KB (2020). *palmerpenguins: Palmer Archipelago (Antarctica) penguin data*. R package version 0.1.0. [https://doi.org/10.5281/zenodo.3960218](https://doi.org/10.5281/zenodo.3960218).
 
-To cite this project after publication, use: <YOUR NAME> (2026). *Penguin Morphometrics: Can Four Measurements Identify a Species?* GitHub repository, data-science-project, <PUBLISHED REPOSITORY URL>, accessed <ACCESS DATE>; include the commit SHA used. These placeholders await the human author's publication details.
+To cite this project, use: ByronLen (2026). *Penguin Morphometrics: Can Four Measurements Identify a Species?* GitHub repository, data-science-project, https://github.com/ByronLen/data-science-project, accessed 2026-10-21; include the commit SHA used.
