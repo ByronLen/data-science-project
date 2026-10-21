@@ -1,0 +1,9 @@
+group,x,y,n,pearson_r
+overall,bill_length_mm,flipper_length_mm,342,0.656
+Adelie,bill_length_mm,flipper_length_mm,151,0.326
+Chinstrap,bill_length_mm,flipper_length_mm,68,0.472
+Gentoo,bill_length_mm,flipper_length_mm,123,0.661
+overall,flipper_length_mm,body_mass_g,342,0.871
+Adelie,flipper_length_mm,body_mass_g,151,0.468
+Chinstrap,flipper_length_mm,body_mass_g,68,0.642
+Gentoo,flipper_length_mm,body_mass_g,123,0.703

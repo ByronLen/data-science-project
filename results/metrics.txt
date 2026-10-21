@@ -1,0 +1,51 @@
+Raw rows: 344; columns: 8
+Original missing counts:
+species               0
+island                0
+bill_length_mm        2
+bill_depth_mm         2
+flipper_length_mm     2
+body_mass_g           2
+sex                  11
+year                  0
+Raw species counts:
+species
+Adelie       152
+Chinstrap     68
+Gentoo       124
+Removed rows: 2; modeling rows: 342
+Features: bill_length_mm, bill_depth_mm, flipper_length_mm, body_mass_g
+Split: stratified 75/25 holdout; random_state=42
+Training rows: 256; test rows: 86
+Test species counts:
+species
+Adelie       38
+Chinstrap    17
+Gentoo       31
+Pipeline: StandardScaler + LogisticRegression(max_iter=2000, random_state=42)
+Test accuracy: 1.000
+Test macro F1: 1.000
+Training-only CV: StratifiedKFold(n_splits=5, shuffle=True, random_state=42)
+CV accuracy folds: 0.981, 0.961, 0.980, 0.980, 1.000
+CV accuracy mean +/- SD (population, ddof=0): 0.980 +/- 0.012
+Confusion matrix (rows=true, columns=predicted; Adelie, Chinstrap, Gentoo):
+[[38  0  0]
+ [ 0 17  0]
+ [ 0  0 31]]
+Classification report:
+              precision    recall  f1-score   support
+
+      Adelie      1.000     1.000     1.000        38
+   Chinstrap      1.000     1.000     1.000        17
+      Gentoo      1.000     1.000     1.000        31
+
+    accuracy                          1.000        86
+   macro avg      1.000     1.000     1.000        86
+weighted avg      1.000     1.000     1.000        86
+
+Descriptive eta-squared (between-species / total variance; not model feature importance):
+flipper_length_mm: 0.778
+bill_length_mm: 0.708
+bill_depth_mm: 0.680
+body_mass_g: 0.670
+Software: Python 3.12.0, pandas 2.3.3, numpy 2.5.4, matplotlib 3.11.2, seaborn 0.13.2, scikit-learn 1.9.1
